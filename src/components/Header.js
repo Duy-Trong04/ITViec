@@ -11,7 +11,7 @@ const Header = () => {
             <img
               src="https://itviec.com/assets/logo-itviec-4492a2f2577a15a0a1d55444c21c0fa55810822b3b189fc689b450fb62ce0b5b.png"
               alt="NAB Logo"
-              style={{ width: "100px", marginRight: "20px" }}
+              style={{ width: "90px", marginRight: "20px" }}
             />
           </li>
           <li className="nav-item">
@@ -27,9 +27,9 @@ const Header = () => {
         <div className="auth">
           <a href="#">For Employers</a>
           <a href="#">Sign In/Sign up</a>
-          <a href="#" className="lang" style={{textDecoration: 'none'}}>EN</a>
-          <p className="divider">|</p>
-          <a href="#" className="lang" style={{color: 'gray', textDecoration: 'none'}}>VI</a>
+          <a href="#" className="lang" style={{textDecoration: 'none', fontSize: '16px'}}>EN</a>
+          <p style={{padding:'0 0 4px 9px'}}>|</p>
+          <a href="#" className="lang" style={{color: 'gray', textDecoration: 'none', fontSize: '16px'}}>VI</a>
         </div>
       </nav>
       <hr className="hr"/>
