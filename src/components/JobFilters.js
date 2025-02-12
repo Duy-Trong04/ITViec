@@ -1,5 +1,47 @@
 import React, { useState } from "react";
 import { Filter } from "lucide-react";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
+
+const animatedComponents = makeAnimated();
+
+// Tuỳ chỉnh hiển thị checkbox mà không thay đổi thứ tự
+const customOption = (props) => {
+  const { data, isSelected, innerRef, innerProps } = props;
+  return (
+    <div
+      ref={innerRef}
+      {...innerProps}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        padding: "5px",
+        cursor: "pointer",
+      }}
+    >
+      <input
+        type="checkbox"
+        checked={isSelected}
+        readOnly
+        style={{ marginRight: "10px", accentColor: "red" }} // Dấu tick màu đỏ
+      />
+      {data.label}
+    </div>
+  );
+};
+
+// Giữ nguyên giá trị được chọn nhưng không thay đổi vị trí
+const customMultiValue = ({ data }) => (
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <input
+      type="checkbox"
+      checked
+      readOnly
+      style={{ marginRight: "5px", accentColor: "red" }} // Dấu tick màu đỏ
+    />
+    {data.label}
+  </div>
+);
 
 const JobFilter = () => {
   const [selectedLevels, setSelectedLevels] = useState([]);
@@ -33,71 +75,24 @@ const JobFilter = () => {
     { value: "Education", label: "Education" },
   ];
 
-  const handleCheckboxChange = (setSelected, selected, option) => {
-    if (selected.includes(option.value)) {
-      setSelected(selected.filter((item) => item !== option.value));
-    } else {
-      setSelected([...selected, option.value]);
-    }
-  };
-
-  const Dropdown = ({ placeholder, options, selected, setSelected }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-      <div className="custom-dropdown" style={{ position: "relative" }}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          style={{
-            padding: "5px 10px",
-            backgroundColor: "#f0f0f0",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-            cursor: "pointer",
-            minWidth: "110px",
-            textAlign: "left",
-          }}
-        >
-          {placeholder}
-        </button>
-        {isOpen && (
-          <div
-            style={{
-              position: "absolute",
-              top: "100%",
-              left: "0",
-              backgroundColor: "#fff",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              zIndex: "1000",
-              width: "100%",
-              marginTop: "5px",
-            }}
-          >
-            {options.map((option) => (
-              <div
-                key={option.value}
-                style={{
-                  padding: "5px 10px",
-                  display: "flex",
-                  alignItems: "center",
-                  cursor: "pointer",
-                }}
-                onClick={() => handleCheckboxChange(setSelected, selected, option)}
-              >
-                <input
-                  type="checkbox"
-                  checked={selected.includes(option.value)}
-                  readOnly
-                  style={{ marginRight: "10px", accentColor: "red" }}
-                />
-                {option.label}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    );
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      minWidth: 110,
+      width: "auto", // Chiều rộng linh hoạt
+      maxWidth: "100%",
+      borderRadius: '20px',
+    }),
+    menu: (provided) => ({
+      ...provided,
+      zIndex: 9999, // Đảm bảo menu hiển thị trên cùng
+    }),
+    multiValue: (provided) => ({
+      ...provided,
+      backgroundColor: "#e3f2fd", // Màu nền của option đã chọn
+      borderRadius: "4px",
+      padding: "2px",
+    }),
   };
 
   return (
@@ -117,46 +112,83 @@ const JobFilter = () => {
         }}
       >
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          <Dropdown
-            placeholder="Level"
+          <Select
+            closeMenuOnSelect={false}
+            components={{
+              Option: customOption,
+              MultiValue: customMultiValue,
+              animatedComponents,
+            }}
+            isMulti
             options={levelOptions}
-            selected={selectedLevels}
-            setSelected={setSelectedLevels}
+            value={selectedLevels}
+            onChange={setSelectedLevels}
+            placeholder="Level"
+            menuPortalTarget={document.body}
+            styles={customStyles}
           />
-          <Dropdown
-            placeholder="Working Model"
+          <Select
+            closeMenuOnSelect={false}
+            components={{
+              Option: customOption,
+              MultiValue: customMultiValue,
+              animatedComponents,
+            }}
+            isMulti
             options={modelOptions}
-            selected={selectedModels}
-            setSelected={setSelectedModels}
+            value={selectedModels}
+            onChange={setSelectedModels}
+            placeholder="Working Model"
+            menuPortalTarget={document.body}
+            styles={customStyles}
           />
-          <Dropdown
-            placeholder="Salary"
+          <Select
+            closeMenuOnSelect={false}
+            components={{
+              Option: customOption,
+              MultiValue: customMultiValue,
+              animatedComponents,
+            }}
+            isMulti
             options={salaryOptions}
-            selected={selectedSalaries}
-            setSelected={setSelectedSalaries}
+            value={selectedSalaries}
+            onChange={setSelectedSalaries}
+            placeholder="Salary"
+            menuPortalTarget={document.body}
+            styles={customStyles}
           />
-          <Dropdown
-            placeholder="Industry"
+          <Select
+            closeMenuOnSelect={false}
+            components={{
+              Option: customOption,
+              MultiValue: customMultiValue,
+              animatedComponents,
+            }}
+            isMulti
             options={industryOptions}
-            selected={selectedIndustries}
-            setSelected={setSelectedIndustries}
+            value={selectedIndustries}
+            onChange={setSelectedIndustries}
+            placeholder="Industry"
+            menuPortalTarget={document.body}
+            styles={customStyles}
           />
         </div>
         <button
           className="filter-button"
           style={{
-            fontSize: "16px",
+            fontSize: "15px",
             display: "flex",
             alignItems: "center",
             padding: "5px 10px",
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
+            backgroundColor: "#fffff",
+            color: "black",
+            border: "1px sold black",
             borderRadius: "5px",
             cursor: "pointer",
+            fontWeight: "300"
           }}
         >
-          <Filter className="filter-icon" style={{ marginRight: "5px" }} />{" "}
+          <Filter className="filter-icon" style={{ marginRight: "2px" }} />{" "}
           Filter
         </button>
       </div>

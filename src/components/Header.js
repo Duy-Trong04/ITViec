@@ -38,7 +38,7 @@ const Header = () => {
           <FaMapMarkerAlt className="select-icon" />
           <select className="city-dropdown">
             <option>All Cities</option>
-            <option>Ho Chi Minh</option>
+            <option><input type="checkbox"></input> Ho Chi Minh</option>
             <option>Ha Noi</option>
             <option>Da Nang</option>
             <option>Others</option>

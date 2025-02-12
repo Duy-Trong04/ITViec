@@ -9,7 +9,7 @@ body {
     background: linear-gradient(300deg, #790000 10%, #330000 20%, #000000 120%);
     color: white;
     padding: 0 20px 140px 20px;
-    position: relative; /* Cho phép phần spotlight tràn xuống */
+    position: relative;
   }
   
   .nav {
@@ -160,7 +160,7 @@ body {
     z-index: 5;
   }
   
-  .company-logo {
+  .company-logo1 {
     position: absolute;
     top: 50%;
     left: 270px;
@@ -176,16 +176,16 @@ body {
     z-index: 10;
   }
   
-  .company-logo img {
+  .company-logo1 img {
     width: 100%;
   }
   
-  .company-info {
+  .company-info1 {
     flex: 1;
     padding: 0 120px;
   }
   
-  .company-info h3 {
+  .company-info1 h3 {
     margin: 0;
     font-size: 18px;
     font-weight: bold;
@@ -193,7 +193,7 @@ body {
     padding-bottom: 5px;
   }
   
-  .company-info p {
+  .company-info1 p {
     margin: 4px 0;
     color: #555;
     font-size: 15px;
@@ -202,7 +202,7 @@ body {
 
   }
   
-  .company-info a {
+  .company-info1 a {
     color: #0073e6;
     font-weight: 600;
     font-size: 15px;
@@ -210,7 +210,7 @@ body {
     padding-bottom: 8px;
   }
   
-  .company-info a:hover {
+  .company-info1 a:hover {
     color: #054382d1;
   }
   
@@ -229,7 +229,7 @@ body {
     gap: 6px;
   }
   
-  .job-item {
+  .job-item1 {
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -303,4 +303,193 @@ body {
   .filter-icon {
     font-size: 15px;
   }
-  
+
+  /* JobList */
+  .job-list {
+    width: 40%;
+    margin-top: -20px;
+    position: relative;
+    left: 5.7%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    max-width: 40%;
+    overflow-y: auto; 
+}
+
+.job-item {
+    display: flex;  
+    align-items: flex-start;
+    flex-direction: column; 
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.job-item:hover{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.posted-time {
+    font-size: 14px;
+    color: gray;
+}
+
+.job-title1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.company-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    object-fit: contain;
+    margin: 2px;         
+    margin-right: 8px;
+    border: 1px solid gray;   
+}
+
+.salary a{
+    font-size: 16px;
+    color: black;
+}
+
+.location {
+    font-size: 14px;
+    color: #666;
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 0px;
+}
+
+.tag {
+    background: #f1f3f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+/* Comonent JobDetail */
+.job-card {
+  max-width: 600px;
+  margin-top: -20px;
+  margin-right: 80px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  flex: 2;
+  max-width: 60%;
+  overflow-y: auto;
+}
+
+.job-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.job-logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  border-radius: 10px;
+  object-fit: contain;
+  border: 1px solid gray;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.job-meta {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Nút Apply */
+.apply-btn {
+  width: 100%;
+  background: #f10529;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+  background: #cc001f;
+}
+
+/* Thông tin công việc */
+.job-info {
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Danh sách kỹ năng */
+.job-skills {
+  margin-top: 15px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.skill-item {
+  background: #f3f3f3;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+}
+
+/* Lợi ích */
+.job-benefits {
+  margin-top: 15px;
+}
+
+.benefit-list {
+  margin-top: 5px;
+  padding-left: 20px;
+  color: #444;
+  font-size: 14px;
+}
+.job-container {
+  display: flex;
+  gap: 105px; /* Khoảng cách giữa 2 cột */
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+}
