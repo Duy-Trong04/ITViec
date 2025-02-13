@@ -4,6 +4,7 @@ import CompanySpotlight from './components/CompanySpotlight';
 import JobFilters from './components/JobFilters';
 import JobList from './components/JobList';
 import JobDetails from './components/JobDetail';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -66,7 +67,7 @@ const jobs = [
         {/* Chi tiet cong viec */}
         <JobDetails job={selectedJob} jobs = {jobs}/>
       </div>
-      
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaChevronDown } from "react-icons/fa"; // Import icon mũi tên xuống
-import { FaSearch } from "react-icons/fa"; // Import icon tìm kiếm
+import { FaChevronDown } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import {FaMapMarkerAlt } from "react-icons/fa";
 const Header = () => {
   return (
