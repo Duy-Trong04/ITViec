@@ -316,7 +316,12 @@ body {
     gap: 15px;
     flex: 1;
     max-width: 40%;
+    max-height: 740px;
     overflow-y: auto; 
+}
+.job-list::-webkit-scrollbar {
+  width: 0;
+  display: none;
 }
 
 .job-item {
@@ -387,6 +392,7 @@ body {
 /* Comonent JobDetail */
 .job-card {
   max-width: 550px;
+  max-height: 700px; /* Giới hạn chiều cao, bạn có thể thay đổi */
   margin-top: -20px;
   margin-right: 80px;
   background: white;
@@ -406,8 +412,8 @@ body {
 }
 
 .job-logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   margin-right: 15px;
   border-radius: 10px;
   object-fit: contain;
@@ -415,7 +421,7 @@ body {
 }
 
 .job-title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 4px;
 }
@@ -434,7 +440,7 @@ body {
   padding: 10px;
   font-size: 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -452,7 +458,8 @@ body {
 
 /* Danh sách kỹ năng */
 .job-skills {
-  margin-top: 15px;
+  display: flex;
+  margin-top: 5px;
 }
 
 .section-title {
@@ -462,14 +469,15 @@ body {
 }
 
 .skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 5px;
+  display: inline;  
+  margin-top: 10px;
+  margin-left: 10px;
+  gap: 10px;
 }
 
 .skill-item {
-  background: #f3f3f3;
+  background: transparent;
+  border: 1px solid gray;
   color: #555;
   padding: 6px 12px;
   border-radius: 15px;
@@ -482,11 +490,16 @@ body {
 }
 
 .benefit-list {
-  margin-top: 5px;
+  margin-top: 20px;
   padding-left: 20px;
   color: #444;
-  font-size: 14px;
+  font-size: 16px;
 }
+
+.benefit-list li{
+  margin-bottom: 10px;
+}
+
 .job-container {
   display: flex;
   gap: 110px;

@@ -5,7 +5,6 @@ import makeAnimated from "react-select/animated";
 
 const animatedComponents = makeAnimated();
 
-// Tuỳ chỉnh hiển thị checkbox mà không thay đổi thứ tự
 const customOption = (props) => {
   const { data, isSelected, innerRef, innerProps } = props;
   return (
@@ -23,21 +22,21 @@ const customOption = (props) => {
         type="checkbox"
         checked={isSelected}
         readOnly
-        style={{ marginRight: "10px", accentColor: "red" }} // Dấu tick màu đỏ
+        style={{ marginRight: "10px", accentColor: "red" }}
       />
       {data.label}
     </div>
   );
 };
 
-// Giữ nguyên giá trị được chọn nhưng không thay đổi vị trí
+
 const customMultiValue = ({ data }) => (
   <div style={{ display: "flex", alignItems: "center" }}>
     <input
       type="checkbox"
       checked
       readOnly
-      style={{ marginRight: "5px", accentColor: "red" }} // Dấu tick màu đỏ
+      style={{ marginRight: "5px", accentColor: "red" }} 
     />
     {data.label}
   </div>
@@ -79,17 +78,17 @@ const JobFilter = () => {
     control: (provided) => ({
       ...provided,
       minWidth: 110,
-      width: "auto", // Chiều rộng linh hoạt
+      width: "auto",
       maxWidth: "100%",
       borderRadius: '20px',
     }),
     menu: (provided) => ({
       ...provided,
-      zIndex: 9999, // Đảm bảo menu hiển thị trên cùng
+      zIndex: 9999,
     }),
     multiValue: (provided) => ({
       ...provided,
-      backgroundColor: "#e3f2fd", // Màu nền của option đã chọn
+      backgroundColor: "#e3f2fd",
       borderRadius: "4px",
       padding: "2px",
     }),
