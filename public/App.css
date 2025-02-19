@@ -32,7 +32,70 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: gray;
+    position: relative;
+    padding: 10px 15px;
   }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 10px;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .nav-item:hover .submenu {
+    display: block;
+  }
+  
+  .submenu li {
+    padding: 8px 15px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .submenu li:hover {
+    background: #ccc;
+  }
+
+.submenu li:hover .sub-submenu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 280px;
+}
+
+.sub-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #000000;
+  list-style: none;
+  padding: 30px; 
+  width: 700px; 
+  display: none;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.sub-submenu li {
+  width: auto;
+  white-space: nowrap;
+  padding: 5px;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+.sub-submenu li:hover {
+  background-color: gray;
+  color: white;
+}
+  
   .arrow-icon {
     font-size: 14px;
     margin-left: 5px;
@@ -50,8 +113,13 @@ body {
     font-size: 16px;
     margin-left: 15px;
   }
+
+  .auth p{
+    
+    margin-left: 10px;
+  }
   .auth a:hover{
-    text-decoration: underline;
+    text-decoration: none;
   }
   
   .language-select {
@@ -431,7 +499,6 @@ body {
   font-size: 14px;
 }
 
-/* Nút Apply */
 .apply-btn {
   width: 100%;
   background: #f10529;
@@ -449,14 +516,12 @@ body {
   background: #cc001f;
 }
 
-/* Thông tin công việc */
 .job-info {
   margin-top: 15px;
   color: #333;
   font-size: 14px;
 }
 
-/* Danh sách kỹ năng */
 .job-skills {
   display: flex;
   margin-top: 5px;
@@ -484,7 +549,6 @@ body {
   font-size: 13px;
 }
 
-/* Lợi ích */
 .job-benefits {
   margin-top: 15px;
 }
@@ -506,6 +570,18 @@ body {
   justify-content: space-between;
   width: 100%;
   margin: auto;
+}
+
+.job-card::-webkit-scrollbar {
+  width: 6px; /* Độ rộng thanh cuộn dọc */
+}
+.job-card::-webkit-scrollbar-thumb {
+  background: #aaa; /* Màu thanh cuộn */
+  border-radius: 3px;
+}
+.job-card::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Màu nền của thanh cuộn */
+  border-radius: 3px;
 }
 
 /* Footer */

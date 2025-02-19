@@ -47,8 +47,8 @@ function JobList({ jobs, onJobSelect }) {
                         <FaMapMarkerAlt style={{ color: 'gray' }} /> {job.location}
                     </p>
                     <div className="tags">
-                        {job.tags.map((tag, index) => (
-                            <span key={index} className="tag">{tag}</span>
+                        {job.skills.map((skills, index) => (
+                            <span key={index} className="tag">{skills}</span>
                         ))}
                     </div>
                 </div>

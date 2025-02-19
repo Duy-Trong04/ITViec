@@ -40,7 +40,7 @@ function JobDetails({ job, jobs }) {
       <div className="job-skills">
         <p className="section" style={{fontSize: '15px', color: 'gray'}}>Skills:</p>
         <div className="skill-list">
-          {selectedJob.tags.map((tag, index) => (
+          {selectedJob.skills.map((tag, index) => (
             <span key={index} className="skill-item">{tag}</span>
           ))}
         </div>
