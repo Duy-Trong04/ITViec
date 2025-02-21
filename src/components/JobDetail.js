@@ -16,7 +16,7 @@ function JobDetails({ job, jobs }) {
         <img src={selectedJob.logo} alt="Company Logo" className="job-logo" />
         <div>
           <h2 className="job-title">{selectedJob.title}</h2>
-          <p className="job-meta">{selectedJob.company} - {selectedJob.location}</p>
+          <p className="job-meta">{selectedJob.company}</p>
           <p className="salary"><MdAttachMoney /> <a href="#">Sign in to view salary</a></p>
         </div>
       </div>
