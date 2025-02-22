@@ -183,7 +183,7 @@ const JobFilter = () => {
       style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}
     >
       <h2 style={{ marginBottom: "10px", marginTop: '-110px', fontSize: '28px'}}>
-        978 IT jobs in Vietnam
+        20 IT jobs in Vietnam
       </h2>
 
       {/* Thanh filter */}
