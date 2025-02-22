@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ITViec/static/css/main.e6c13ad2.css",
+    "main.js": "/ITViec/static/js/main.77282dd7.js",
+    "index.html": "/ITViec/index.html",
+    "main.e6c13ad2.css.map": "/ITViec/static/css/main.e6c13ad2.css.map",
+    "main.77282dd7.js.map": "/ITViec/static/js/main.77282dd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.77282dd7.js"
+  ]
+}
